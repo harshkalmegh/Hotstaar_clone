@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "HelveticaNeue-Light", sans-serif;
+}
+
+body {
+  --BRAND_BLUE: #1f80e0;
+  --BRAND_RED: #f15151;
+  --BRAND_ORANGE: #db882a;
+  --BG_GRADIENT_L0: linear-gradient(to bottom, #141b29, #0c111b 300px);
+  --BG_GRADIENT_L1: linear-gradient(to bottom, #192133, #111826);
+  --BG_GRADIENT_L2: linear-gradient(to bottom, #334366, #334366, #1c2940);
+  --CARD_GRADIENT: #030b17;
+  --HEADER_COLOR: #121926;
+  --BG_COLOR_L0: #0c111b;
+  --BG_COLOR_L1: #192133;
+  --BG_COLOR_L2: #334366;
+  --BG_COLOR_L3: rgba(144, 153, 153, 0.1);
+  --BG_COLOR_L4: #1b1f20;
+  --BORDER_COLOR_L0: #2e3333;
+  --TEXT_COLOR_L0: #fff;
+  --TEXT_COLOR_L1: rgba(255, 255, 255, 0.8);
+  --TEXT_COLOR_L2: rgba(255, 255, 255, 0.6);
+  --TEXT_COLOR_L3: #dadada;
+  --TEXT_COLOR_L4: #909999;
+  --TEXT_COLOR_L5: #f9f9f9;
+  --TEXT_LINK_COLOR: #1f80e0;
+  --TEXT_BTN_COLOR: #1f80e0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 7;
+}
+
+.logo {
+  margin-bottom: 10px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav {
+  height: 70px;
+  background: var(--BG_COLOR_L0);
+}
+nav ul {
+  float: left;
+}
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+nav ul li a {
+  color: var(--TEXT_COLOR_L1);
+  display: block;
+  padding: 0 15px;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+nav ul ul {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+nav ul li:hover ul {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
+}
+nav ul ul li {
+  width: 147px;
+  display: list-item;
+  position: relative;
+  background-color: var(--BG_COLOR_L1);
+  border-top: none;
+  color: var(--TEXT_COLOR_L0);
+}
+
+.header ul li ul li a:hover {
+  background: var(--BG_COLOR_L2);
+  color: var(--TEXT_COLOR_L0);
+}
+
+.header ul li a:hover {
+  color: #fff;
+}
+
+nav ul ul li a {
+  line-height: 40px;
+}
+nav ul ul ul {
+  border-top: none;
+}
+nav ul ul ul li {
+  position: relative;
+  top: -70px;
+  left: 150px;
+}
+nav ul ul li a i {
+  margin-left: 45px;
+}
+
+.searchbar input {
+  background-color: var(--BG_GRADIENT_L0);
+  outline: none;
+  border: none;
+  font-size: 15px;
+  margin-bottom: 8px;
+  width: 240px;
+}
+
+.searchbar {
+  border-bottom: 1px solid grey;
+  margin-left: 200px;
+}
+
+.search_icon {
+  height: 15px;
+  fill: grey;
+  margin-bottom: -5px;
+}
+
+.subscribe button {
+  background-color: var(--BRAND_BLUE);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 120px;
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+.login p {
+  color: var(--TEXT_COLOR_L1);
+  font-weight: 600;
+  margin-left: 15px;
+}
+.material-icons {
+  color: var(--TEXT_COLOR_L1);
+  padding: 0 10px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.text_image_container {
+  background: var(--BG_GRADIENT_L0);
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin-top: 68px;
+}
+
+.text_container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: auto;
+  padding: 70px 30px 130px 30px;
+  background-color: black;
+}
+
+.text_container h2 {
+  padding: 10px 0;
+  color: var(--TEXT_COLOR_L0);
+}
+
+.text_container h4 {
+  padding: 10px 0;
+  color: var(--TEXT_COLOR_L2);
+}
+.text_container h3 {
+  padding: 10px 0;
+  color: var(--TEXT_COLOR_L1);
+  line-height: 30px;
+}
+
+/* Transform Section  */
+.image_container_ img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.image_container_ {
+  display: flex;
+}
+
+.image_ {
+  width: 160px;
+  height: 212px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.4s ease-in-out;
+  margin: 0 10px;
+}
+
+.image_:hover {
+  transform: scale(1.2);
+}
+
+.image_::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(4, 8, 15, 0),
+    var(--BG_COLOR_L1),
+    var(--BG_COLOR_L1)
+  );
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+
+.image_:hover:before {
+  opacity: 1;
+}
+
+.image_ img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+}
+
+.image_ .details {
+  position: absolute;
+  bottom: 12px;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  font-size: 9px;
+  transform: scale(1.2);
+  transition: 0.5s all;
+}
+
+.details {
+  margin: 0 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 70px;
+  max-width: 117px;
+}
+
+.image_:hover .details {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.heading_container {
+  color: white;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.movies_container {
+  background: var(--BG_GRADIENT_L1);
+  padding: 20px;
+}
+
+.text_svg_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.watch_movie_svg {
+  margin: 0 5px 0 0;
+  width: 7px;
+  /* margin-bottom: 2px; */
+}
+
+.text_svg_container:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+.add_to_watchlist_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 5px 0 2px;
+  height: 13px;
+}
+
+.add_to_watchlist_svg {
+  margin: 0 4px 0 0;
+  width: 12px;
+  /* margin-bottom: 2px; */
+}
+
+.add_to_watchlist_container:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+.add_to_watchlist_text,
+.watch_movie_text {
+  font-size: 8px;
+}
+
+/* footer */
+.footer {
+  background: var(--BG_GRADIENT_L0);
+  color: var(--TEXT_COLOR_L1);
+  padding: 30px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about_hotstar {
+  padding: 10px 0;
+  width: 600px;
+}
+
+.links span {
+  padding: 0 20px 0 0;
+  cursor: pointer;
+}
+
+.links span:hover {
+  color: #1f80e0;
+}
+
+.about_hotstar_description {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.connect_with_us img {
+  width: 20px;
+  height: 20px;
+}
+
+.connect_with_us {
+  display: flex;
+  flex-direction: column;
+}
+
+.connect_with_us_icons {
+  margin: auto;
+  margin-top: 12px;
+}
